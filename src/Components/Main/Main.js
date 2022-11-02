@@ -1,8 +1,23 @@
+import "./Main.css";
+import Cell from "../Cell/Cell.js";
+
 const Main = () => {
   return (
-    <div>
-      <h1>this is the main</h1>
-    </div>
+    <main>
+      <section className="main-section">
+        <Cell />
+        <Cell />
+        <Cell />
+
+        <Cell />
+        <Cell />
+        <Cell />
+
+        <Cell />
+        <Cell />
+        <Cell />
+      </section>
+    </main>
   );
 };
 

@@ -1,9 +1,10 @@
 import "./Footer.css";
+import LinkSvg from "../../Assets/Svgs/Link";
 
 const Footer = () => {
   return (
     <div>
-      <h1>this is the footer</h1>
+      <LinkSvg />
     </div>
   );
 };

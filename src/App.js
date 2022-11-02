@@ -5,13 +5,28 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import JoinRoomModal from "./Components/JoinRoomModal/JoinRoomModal";
 
+const socket = io.connect("http://localhost:5000");
+
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [roomCode, setRoomCode] = useState(null);
+
+  useEffect(() => {
+    console.log(roomCode);
+    if (roomCode) {
+      socket.emit("joinRoom", roomCode);
+    }
+  }, [roomCode]);
+
   return (
     <>
-      <JoinRoomModal showModal={showModal} />
+      <JoinRoomModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        setRoomCode={setRoomCode}
+      />
       <Header />
-      <Main />
+      <Main socket={socket} roomCode={roomCode} />
       <Footer setShowModal={setShowModal} />
     </>
   );

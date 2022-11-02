@@ -1,10 +1,12 @@
 .svg {
   width: 50px;
   height: 50px;
+  border: 3px solid var(--secondary-color);
 }
 
 .svg-path {
   fill: white;
+  fill: var(--secondary-color);
 }
 
 .svg:hover {

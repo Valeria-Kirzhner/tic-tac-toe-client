@@ -58,13 +58,13 @@ const LinkSvg = ({ setShowModal }) => {
       onMouseEnter={handleMouseEnterControls}
       onMouseLeave={handleMouseLeaveControls}
       variants={svgVariants}
-      whileHover="hover"
-      whileTap="tap"
+      whilehover="hover"
+      whiletap="tap"
       className="svg"
     >
       <svg
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.8 }}
+        whilehover={{ scale: 1.2 }}
+        whiletap={{ scale: 0.8 }}
         xmlns="http://www.w3.org/2000/motion."
         viewBox="0 0 24 24"
       >

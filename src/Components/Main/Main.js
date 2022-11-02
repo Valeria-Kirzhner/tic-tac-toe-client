@@ -26,9 +26,26 @@ const Main = ({ socket, roomCode }) => {
 
     if (
       (board[0] == "X" && board[1] == "X" && board[2] == "X") ||
-      (board[0] == "O" && board[1] == "O" && board[2] == "O")
+      (board[0] == "O" && board[1] == "O" && board[2] == "O") ||
+      (board[3] == "O" && board[4] == "O" && board[5] == "O") ||
+      (board[3] == "X" && board[4] == "X" && board[5] == "X") ||
+      (board[6] == "O" && board[7] == "O" && board[8] == "O") ||
+      (board[6] == "X" && board[7] == "X" && board[8] == "X") ||
+      // diagonal
+      (board[0] == "O" && board[4] == "O" && board[8] == "O") ||
+      (board[0] == "X" && board[4] == "X" && board[8] == "X") ||
+      (board[2] == "O" && board[4] == "O" && board[6] == "O") ||
+      (board[2] == "X" && board[4] == "X" && board[6] == "X") ||
+      // up sidedown
+      (board[0] == "O" && board[3] == "O" && board[6] == "O") ||
+      (board[0] == "X" && board[3] == "X" && board[6] == "X") ||
+      (board[1] == "O" && board[4] == "O" && board[7] == "O") ||
+      (board[1] == "X" && board[4] == "X" && board[7] == "X") ||
+      (board[2] == "O" && board[5] == "O" && board[8] == "O") ||
+      (board[2] == "X" && board[5] == "X" && board[8] == "X")
     ) {
       setBoard(["", "", "", "", "", "", "", "", ""]);
+      window.prompt("You Won! Congrats!");
     }
   };
 
@@ -38,12 +55,12 @@ const Main = ({ socket, roomCode }) => {
         <Cell handleCellClick={handleCellClick} id={"0"} text={board[0]} />
         <Cell handleCellClick={handleCellClick} id={"1"} text={board[1]} />
         <Cell handleCellClick={handleCellClick} id={"2"} text={board[2]} />
-        <Cell handleCellClick={handleCellClick} id={"0"} text={board[3]} />
-        <Cell handleCellClick={handleCellClick} id={"1"} text={board[4]} />
-        <Cell handleCellClick={handleCellClick} id={"2"} text={board[5]} />
-        <Cell handleCellClick={handleCellClick} id={"0"} text={board[6]} />
-        <Cell handleCellClick={handleCellClick} id={"1"} text={board[7]} />
-        <Cell handleCellClick={handleCellClick} id={"2"} text={board[8]} />
+        <Cell handleCellClick={handleCellClick} id={"3"} text={board[3]} />
+        <Cell handleCellClick={handleCellClick} id={"4"} text={board[4]} />
+        <Cell handleCellClick={handleCellClick} id={"5"} text={board[5]} />
+        <Cell handleCellClick={handleCellClick} id={"6"} text={board[6]} />
+        <Cell handleCellClick={handleCellClick} id={"7"} text={board[7]} />
+        <Cell handleCellClick={handleCellClick} id={"8"} text={board[8]} />
       </section>
     </main>
   );

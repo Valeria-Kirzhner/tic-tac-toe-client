@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import JoinRoomModal from "./Components/JoinRoomModal/JoinRoomModal";
 
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("http://localhost:8000");
 
 function App() {
   const [showModal, setShowModal] = useState(false);

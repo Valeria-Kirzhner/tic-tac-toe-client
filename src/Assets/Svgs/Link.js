@@ -37,7 +37,7 @@ const pathVariants2 = {
   },
 };
 
-const LinkSvg = () => {
+const LinkSvg = ({ setShowModal }) => {
   const controls = useAnimation();
   const controls2 = useAnimation();
   const handleMouseEnterControls = () => {
@@ -48,9 +48,13 @@ const LinkSvg = () => {
     controls.start("initial");
     controls2.start("initial");
   };
+  const showModal = () => {
+    setShowModal(true);
+  };
 
   return (
     <motion.div
+      onClick={showModal}
       onMouseEnter={handleMouseEnterControls}
       onMouseLeave={handleMouseLeaveControls}
       variants={svgVariants}

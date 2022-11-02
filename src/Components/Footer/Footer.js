@@ -1,11 +1,11 @@
 import "./Footer.css";
 import LinkSvg from "../../Assets/Svgs/Link";
 
-const Footer = () => {
+const Footer = ({ setShowModal }) => {
   return (
-    <div>
-      <LinkSvg />
-    </div>
+    <footer>
+      <LinkSvg setShowModal={setShowModal} />
+    </footer>
   );
 };
 
